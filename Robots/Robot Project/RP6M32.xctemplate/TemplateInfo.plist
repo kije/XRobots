@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ancestors</key>
+	<array>
+		<string>com.kije.dt.unit.base</string>
+		<string>com.xinu.dt.unit.macBase</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Definitions</key>
+	<dict>
+		<key>___PACKAGENAME___.c</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAME___.c</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>$(TARGETNAME)</string>
+    		</array>
+		</dict>
+
+
+		<key>makefile</key>
+		<dict>
+			<key>Path</key>
+			<string>makefile</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>$(TARGETNAME)</string>
+    		</array>
+		</dict>
+
+		<key>RP6Lib/RP6control/RP6Control.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6control</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6control/RP6Control.h</string>
+		</dict>
+
+		<key>RP6Lib/RP6control/RP6ControlLib.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6control</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6control/RP6ControlLib.c</string>
+		</dict>
+
+		<key>RP6Lib/RP6control/RP6ControlLib.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6control</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6control/RP6ControlLib.h</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6Config.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6Config.h</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6I2CmasterTWI.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6I2CmasterTWI.c</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6I2CmasterTWI.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6I2CmasterTWI.h</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6I2CmasterTWI.lst</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6I2CmasterTWI.lst</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6I2CmasterTWI.o</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6I2CmasterTWI.o</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6I2CslaveTWI.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6I2CslaveTWI.c</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6I2CslaveTWI.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6I2CslaveTWI.h</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6uart.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6uart.c</string>
+		</dict>
+
+		<key>RP6Lib/RP6common/RP6uart.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>RP6Lib</string>
+				<string>RP6common</string>
+			</array>
+			<key>Path</key>
+			<string>RP6Lib/RP6common/RP6uart.h</string>
+		</dict>
+
+		<key>___PACKAGENAME___.hex</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAME___.hex</string>
+		</dict>
+
+		
+	</dict>
+	<key>Description</key>
+	<string>External build of M32 project.</string>
+	<key>Identifier</key>
+	<string>com.xinu.dt.unit.M32</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>___PACKAGENAME___.c</string>
+		<string>makefile</string>
+		<string>RP6Lib/RP6control/RP6Control.h</string>
+		<string>RP6Lib/RP6control/RP6ControlLib.c</string>
+		<string>RP6Lib/RP6control/RP6ControlLib.h</string>
+		<string>RP6Lib/RP6common/RP6Config.h</string>
+		<string>RP6Lib/RP6common/RP6I2CmasterTWI.c</string>
+		<string>RP6Lib/RP6common/RP6I2CmasterTWI.h</string>
+		<string>RP6Lib/RP6common/RP6I2CmasterTWI.lst</string>
+		<string>RP6Lib/RP6common/RP6I2CmasterTWI.o</string>
+		<string>RP6Lib/RP6common/RP6I2CslaveTWI.c</string>
+		<string>RP6Lib/RP6common/RP6I2CslaveTWI.h</string>
+		<string>RP6Lib/RP6common/RP6uart.c</string>
+		<string>RP6Lib/RP6common/RP6uart.h</string>
+		<string>___PACKAGENAME___.hex</string>
+	</array>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>BuildToolArgsString</key>
+			<string>$(ACTION)</string>
+			<key>BuildToolPath</key>
+			<string>/usr/bin/make</string>
+			<key>BuildWorkingDirectory</key>
+			<string>$(SRCROOT)/$(TARGETNAME)</string>
+			<key>Configurations</key>
+			<dict>
+				<key>Debug</key>
+				<dict>
+				</dict>
+				<key>Release</key>
+				<dict/>
+			</dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>PATH</key>
+				<string>$(PATH):/usr/local/CrossPack-AVR/bin</string>
+			</dict>
+			<key>TargetType</key>
+			<string>Legacy</string>
+		</dict>
+	</array>
+</dict>
+</plist>

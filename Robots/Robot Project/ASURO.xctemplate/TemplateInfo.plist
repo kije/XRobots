@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ancestors</key>
+	<array>
+		<string>com.kije.dt.unit.base</string>
+		<string>com.xinu.dt.unit.macBase</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Definitions</key>
+	<dict>
+		<key>___PACKAGENAME___.c</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAME___.c</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>$(TARGETNAME)</string>
+    		</array>
+		</dict>
+
+
+		<key>makefile</key>
+		<dict>
+			<key>Path</key>
+			<string>makefile</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>$(TARGETNAME)</string>
+    		</array>
+		</dict>
+
+		<key>lib/adc_low.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/adc_low.c</string>
+		</dict>
+
+		<key>lib/adc.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/adc.c</string>
+		</dict>
+
+		<key>lib/asuro.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/asuro.c</string>
+		</dict>
+
+		<key>lib/encoder_low.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/encoder_low.c</string>
+		</dict>
+
+		<key>lib/encoder.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/encoder.c</string>
+		</dict>
+
+		<key>lib/globals.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/globals.c</string>
+		</dict>
+
+		<key>lib/i2c.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/i2c.c</string>
+		</dict>
+
+		<key>lib/lcd.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/lcd.c</string>
+		</dict>
+
+		<key>lib/leds.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/leds.c</string>
+		</dict>
+
+		<key>lib/libasuro.a</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/libasuro.a</string>
+		</dict>
+
+		<key>lib/libasuro168.a</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/libasuro168.a</string>
+		</dict>
+
+		<key>lib/libasuro.aps</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/libasuro.aps</string>
+		</dict>
+
+		<key>lib/motor_low.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/motor_low.c</string>
+		</dict>
+
+		<key>lib/motor.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/motor.c</string>
+		</dict>
+
+		<key>lib/my_motor_low.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/my_motor_low.c</string>
+		</dict>
+
+		<key>lib/print.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/print.c</string>
+		</dict>
+
+		<key>lib/printf.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/printf.c</string>
+		</dict>
+
+		<key>lib/rc5.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/rc5.c</string>
+		</dict>
+
+		<key>lib/sound.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/sound.c</string>
+		</dict>
+
+		<key>lib/switches.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/switches.c</string>
+		</dict>
+
+		<key>lib/time.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/time.c</string>
+		</dict>
+
+		<key>lib/uart.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/uart.c</string>
+		</dict>
+
+		<key>lib/ultrasonic.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/ultrasonic.c</string>
+		</dict>
+
+		<key>lib/version.c</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/version.c</string>
+		</dict>
+
+		<key>lib/inc/asuro.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+				<string>inc</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/inc/asuro.h</string>
+		</dict>
+
+		<key>lib/inc/i2c.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+				<string>inc</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/inc/i2c.h</string>
+		</dict>
+
+		<key>lib/inc/lcd.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+				<string>inc</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/inc/lcd.h</string>
+		</dict>
+
+		<key>lib/inc/myasuro.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+				<string>inc</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/inc/myasuro.h</string>
+		</dict>
+
+		<key>lib/inc/rc5.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+				<string>inc</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/inc/rc5.h</string>
+		</dict>
+
+		<key>lib/inc/ultrasonic.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+				<string>inc</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/inc/ultrasonic.h</string>
+		</dict>
+
+		<key>lib/Makefile</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>lib</string>
+			</array>
+
+			<key>Path</key>
+			<string>lib/Makefile</string>
+		</dict>
+
+		<key>___PACKAGENAME___.hex</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAME___.hex</string>
+		</dict>
+		
+	</dict>
+	<key>Description</key>
+	<string>External build of ASURO project.</string>
+	<key>Identifier</key>
+	<string>com.xinu.dt.unit.ASURO</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>___PACKAGENAME___.c</string>
+		<string>makefile</string>
+		<string>lib/adc_low.c</string>
+		<string>lib/adc.c</string>
+		<string>lib/asuro.c</string>
+		<string>lib/encoder_low.c</string>
+		<string>lib/encoder.c</string>
+		<string>lib/globals.c</string>
+		<string>lib/i2c.c</string>
+		<string>lib/lcd.c</string>
+		<string>lib/leds.c</string>
+		<string>lib/libasuro.a</string>
+		<string>lib/libasuro168.a</string>
+		<string>lib/libasuro.aps</string>
+		<string>lib/motor_low.c</string>
+		<string>lib/motor.c</string>
+		<string>lib/my_motor_low.c</string>
+		<string>lib/print.c</string>
+		<string>lib/printf.c</string>
+		<string>lib/rc5.c</string>
+		<string>lib/sound.c</string>
+		<string>lib/switches.c</string>
+		<string>lib/time.c</string>
+		<string>lib/uart.c</string>
+		<string>lib/ultrasonic.c</string>
+		<string>lib/version.c</string>
+		<string>lib/inc/asuro.h</string>
+		<string>lib/inc/i2c.h</string>
+		<string>lib/inc/lcd.h</string>
+		<string>lib/inc/myasuro.h</string>
+		<string>lib/inc/rc5.h</string>
+		<string>lib/inc/ultrasonic.h</string>
+		<string>lib/Makefile</string>
+		<string>___PACKAGENAME___.hex</string>
+	</array>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>BuildToolArgsString</key>
+			<string>$(ACTION)</string>
+			<key>BuildToolPath</key>
+			<string>/usr/bin/make</string>
+			<key>BuildWorkingDirectory</key>
+			<string>$(SRCROOT)/$(TARGETNAME)</string>
+			<key>Configurations</key>
+			<dict>
+				<key>Debug</key>
+				<dict>
+				</dict>
+				<key>Release</key>
+				<dict/>
+			</dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>PATH</key>
+				<string>$(PATH):/usr/local/CrossPack-AVR/bin</string>
+			</dict>
+			<key>TargetType</key>
+			<string>Legacy</string>
+		</dict>
+	</array>
+</dict>
+</plist>

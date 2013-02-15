@@ -1,0 +1,1142 @@
+   1               		.file	"RP6I2CmasterTWI.c"
+   2               		.arch atmega2560
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	__I2CTWI_initMaster
+  20               	__I2CTWI_initMaster:
+  21               	.LFB2:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LVL0:
+  26               	.LM2:
+  27               	/* #APP */
+  28 0000 F894      		cli
+  29               	.LM3:
+  30               	/* #NOAPP */
+  31 0002 8093 B800 		sts 184,r24
+  32               	.LM4:
+  33 0006 1092 B900 		sts 185,__zero_reg__
+  34               	.LM5:
+  35 000a 8FEF      		ldi r24,lo8(-1)
+  36               	.LVL1:
+  37 000c 8093 BB00 		sts 187,r24
+  38               	.LM6:
+  39 0010 84E0      		ldi r24,lo8(4)
+  40 0012 8093 BC00 		sts 188,r24
+  41               	.LM7:
+  42 0016 8091 0000 		lds r24,TWI_statusReg
+  43 001a 8160      		ori r24,lo8(1)
+  44 001c 8093 0000 		sts TWI_statusReg,r24
+  45               	.LM8:
+  46               	/* #APP */
+  47 0020 7894      		sei
+  48               	/* #NOAPP */
+  49               	/* epilogue: frame size=0 */
+  50 0022 0895      		ret
+  51               	/* epilogue end (size=1) */
+  52               	/* function __I2CTWI_initMaster size 20 (19) */
+  53               	.LFE2:
+  55               	.global	I2CTWI_requestedDataReady_DUMMY
+  57               	I2CTWI_requestedDataReady_DUMMY:
+  58               	.LFB3:
+  59               	.LM9:
+  60               	/* prologue: frame size=0 */
+  61               	/* prologue end (size=0) */
+  62               	.LVL2:
+  63               	/* epilogue: frame size=0 */
+  64 0024 0895      		ret
+  65               	/* epilogue end (size=1) */
+  66               	/* function I2CTWI_requestedDataReady_DUMMY size 1 (0) */
+  67               	.LFE3:
+  69               	.global	I2CTWI_setRequestedDataReadyHandler
+  71               	I2CTWI_setRequestedDataReadyHandler:
+  72               	.LFB4:
+  73               	.LM10:
+  74               	/* prologue: frame size=0 */
+  75               	/* prologue end (size=0) */
+  76               	.LVL3:
+  77               	.LM11:
+  78 0026 9093 0000 		sts (I2CTWI_requestedDataReadyHandler)+1,r25
+  79 002a 8093 0000 		sts I2CTWI_requestedDataReadyHandler,r24
+  80               	/* epilogue: frame size=0 */
+  81 002e 0895      		ret
+  82               	/* epilogue end (size=1) */
+  83               	/* function I2CTWI_setRequestedDataReadyHandler size 5 (4) */
+  84               	.LFE4:
+  86               	.global	I2CTWI_transmissionError_DUMMY
+  88               	I2CTWI_transmissionError_DUMMY:
+  89               	.LFB5:
+  90               	.LM12:
+  91               	/* prologue: frame size=0 */
+  92               	/* prologue end (size=0) */
+  93               	.LVL4:
+  94               	/* epilogue: frame size=0 */
+  95 0030 0895      		ret
+  96               	/* epilogue end (size=1) */
+  97               	/* function I2CTWI_transmissionError_DUMMY size 1 (0) */
+  98               	.LFE5:
+ 100               	.global	I2CTWI_setTransmissionErrorHandler
+ 102               	I2CTWI_setTransmissionErrorHandler:
+ 103               	.LFB6:
+ 104               	.LM13:
+ 105               	/* prologue: frame size=0 */
+ 106               	/* prologue end (size=0) */
+ 107               	.LVL5:
+ 108               	.LM14:
+ 109 0032 9093 0000 		sts (I2CTWI_transmissionErrorHandler)+1,r25
+ 110 0036 8093 0000 		sts I2CTWI_transmissionErrorHandler,r24
+ 111               	/* epilogue: frame size=0 */
+ 112 003a 0895      		ret
+ 113               	/* epilogue end (size=1) */
+ 114               	/* function I2CTWI_setTransmissionErrorHandler size 5 (4) */
+ 115               	.LFE6:
+ 117               	.global	I2CTWI_delay
+ 119               	I2CTWI_delay:
+ 120               	.LFB7:
+ 121               	.LM15:
+ 122               	/* prologue: frame size=1 */
+ 123 003c CF93      		push r28
+ 124 003e DF93      		push r29
+ 125 0040 CDB7      		in r28,__SP_L__
+ 126 0042 DEB7      		in r29,__SP_H__
+ 127 0044 2197      		sbiw r28,1
+ 128 0046 0FB6      		in __tmp_reg__,__SREG__
+ 129 0048 F894      		cli
+ 130 004a DEBF      		out __SP_H__,r29
+ 131 004c 0FBE      		out __SREG__,__tmp_reg__
+ 132 004e CDBF      		out __SP_L__,r28
+ 133               	/* prologue end (size=10) */
+ 134               	.LM16:
+ 135 0050 86E9      		ldi r24,lo8(-106)
+ 136 0052 8983      		std Y+1,r24
+ 137               	.LVL6:
+ 138               	.L12:
+ 139               	.LM17:
+ 140 0054 8981      		ldd r24,Y+1
+ 141 0056 8150      		subi r24,lo8(-(-1))
+ 142 0058 8983      		std Y+1,r24
+ 143 005a 8981      		ldd r24,Y+1
+ 144 005c 8F3F      		cpi r24,lo8(-1)
+ 145 005e 01F4      		brne .L12
+ 146               	/* epilogue: frame size=1 */
+ 147 0060 2196      		adiw r28,1
+ 148 0062 0FB6      		in __tmp_reg__,__SREG__
+ 149 0064 F894      		cli
+ 150 0066 DEBF      		out __SP_H__,r29
+ 151 0068 0FBE      		out __SREG__,__tmp_reg__
+ 152 006a CDBF      		out __SP_L__,r28
+ 153 006c DF91      		pop r29
+ 154 006e CF91      		pop r28
+ 155 0070 0895      		ret
+ 156               	/* epilogue end (size=9) */
+ 157               	/* function I2CTWI_delay size 27 (8) */
+ 158               	.LFE7:
+ 160               	.global	task_I2CTWI
+ 162               	task_I2CTWI:
+ 163               	.LFB8:
+ 164               	.LM18:
+ 165               	/* prologue: frame size=0 */
+ 166               	/* prologue end (size=0) */
+ 167               	.LM19:
+ 168 0072 8091 BC00 		lds r24,188
+ 169 0076 80FD      		sbrc r24,0
+ 170 0078 00C0      		rjmp .L31
+ 171               	.LM20:
+ 172 007a 8091 0000 		lds r24,TWI_statusReg
+ 173 007e 80FF      		sbrs r24,0
+ 174 0080 00C0      		rjmp .L32
+ 175               	.LM21:
+ 176 0082 8091 0000 		lds r24,TWI_operation
+ 177 0086 8823      		tst r24
+ 178 0088 01F4      		brne .+2
+ 179 008a 00C0      		rjmp .L31
+ 180               	.LM22:
+ 181 008c 8130      		cpi r24,lo8(1)
+ 182 008e 01F4      		brne .L23
+ 183               	.LM23:
+ 184 0090 0E94 0000 		call I2CTWI_delay
+ 185               	.LM24:
+ 186 0094 92E0      		ldi r25,lo8(2)
+ 187 0096 9093 0000 		sts TWI_msgSize,r25
+ 188               	.LM25:
+ 189 009a 8091 0000 		lds r24,I2CTWI_request_adr
+ 190 009e 8093 0000 		sts I2CTWI_buf,r24
+ 191               	.LM26:
+ 192 00a2 8091 0000 		lds r24,I2CTWI_request_reg
+ 193 00a6 8093 0000 		sts I2CTWI_buf+1,r24
+ 194               	.LM27:
+ 195 00aa 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 196               	.LM28:
+ 197 00ae 85EA      		ldi r24,lo8(-91)
+ 198 00b0 8093 BC00 		sts 188,r24
+ 199               	.LM29:
+ 200 00b4 9093 0000 		sts TWI_operation,r25
+ 201 00b8 0895      		ret
+ 202               	.L23:
+ 203               	.LM30:
+ 204 00ba 8230      		cpi r24,lo8(2)
+ 205 00bc 01F4      		brne .L25
+ 206               	.LM31:
+ 207 00be 0E94 0000 		call I2CTWI_delay
+ 208               	.LM32:
+ 209 00c2 8091 0000 		lds r24,I2CTWI_request_size
+ 210 00c6 8F5F      		subi r24,lo8(-(1))
+ 211 00c8 8093 0000 		sts TWI_msgSize,r24
+ 212               	.LM33:
+ 213 00cc 8091 0000 		lds r24,I2CTWI_request_adr
+ 214 00d0 8160      		ori r24,lo8(1)
+ 215 00d2 8093 0000 		sts I2CTWI_request_adr,r24
+ 216               	.LM34:
+ 217 00d6 8093 0000 		sts I2CTWI_buf,r24
+ 218               	.LM35:
+ 219 00da 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 220               	.LM36:
+ 221 00de 85EA      		ldi r24,lo8(-91)
+ 222 00e0 8093 BC00 		sts 188,r24
+ 223               	.LM37:
+ 224 00e4 83E0      		ldi r24,lo8(3)
+ 225 00e6 8093 0000 		sts TWI_operation,r24
+ 226 00ea 0895      		ret
+ 227               	.L25:
+ 228               	.LM38:
+ 229 00ec 8330      		cpi r24,lo8(3)
+ 230 00ee 01F4      		brne .L31
+ 231               	.LM39:
+ 232 00f0 1092 0000 		sts TWI_operation,__zero_reg__
+ 233               	.LM40:
+ 234 00f4 8091 0000 		lds r24,I2CTWI_requestID
+ 235 00f8 9091 0000 		lds r25,(I2CTWI_requestID)+1
+ 236 00fc 2FEF      		ldi r18,hi8(-1)
+ 237 00fe 8F3F      		cpi r24,lo8(-1)
+ 238 0100 9207      		cpc r25,r18
+ 239 0102 01F0      		breq .L31
+ 240               	.LM41:
+ 241 0104 E091 0000 		lds r30,I2CTWI_requestedDataReadyHandler
+ 242 0108 F091 0000 		lds r31,(I2CTWI_requestedDataReadyHandler)+1
+ 243 010c 1995      		eicall
+ 244 010e 0895      		ret
+ 245               	.L32:
+ 246               	.LBB5:
+ 247               	.LBB6:
+ 248               	.LBB7:
+ 249               	.LM42:
+ 250 0110 8091 BC00 		lds r24,188
+ 251               	.LBE7:
+ 252 0114 80FD      		sbrc r24,0
+ 253 0116 00C0      		rjmp .L32
+ 254               	.LBE6:
+ 255               	.LM43:
+ 256 0118 8091 0000 		lds r24,TWI_TWSR_state
+ 257 011c 282F      		mov r18,r24
+ 258 011e 3327      		clr r19
+ 259               	.LM44:
+ 260 0120 2223      		tst r18
+ 261 0122 01F0      		breq .L31
+ 262               	.LM45:
+ 263 0124 1092 0000 		sts TWI_operation,__zero_reg__
+ 264               	.LM46:
+ 265 0128 8091 0000 		lds r24,TWI_statusReg
+ 266 012c 8160      		ori r24,lo8(1)
+ 267 012e 8093 0000 		sts TWI_statusReg,r24
+ 268               	.LM47:
+ 269 0132 1092 0000 		sts I2CTWI_request_adr,__zero_reg__
+ 270               	.LM48:
+ 271 0136 1092 0000 		sts (I2CTWI_requestID)+1,__zero_reg__
+ 272 013a 1092 0000 		sts I2CTWI_requestID,__zero_reg__
+ 273               	.LM49:
+ 274 013e 1092 0000 		sts I2CTWI_request_size,__zero_reg__
+ 275               	.LM50:
+ 276 0142 E091 0000 		lds r30,I2CTWI_transmissionErrorHandler
+ 277 0146 F091 0000 		lds r31,(I2CTWI_transmissionErrorHandler)+1
+ 278 014a 822F      		mov r24,r18
+ 279               	.LVL7:
+ 280 014c 1995      		eicall
+ 281               	.LVL8:
+ 282               	.L31:
+ 283 014e 0895      		ret
+ 284               	.LBE5:
+ 285               	/* epilogue: frame size=0 */
+ 286               	/* epilogue: noreturn */
+ 287               	/* epilogue end (size=0) */
+ 288               	/* function task_I2CTWI size 111 (111) */
+ 289               	.LFE8:
+ 291               	.global	I2CTWI_requestDataFromDevice
+ 293               	I2CTWI_requestDataFromDevice:
+ 294               	.LFB9:
+ 295               	.LM51:
+ 296               	/* prologue: frame size=0 */
+ 297 0150 FF92      		push r15
+ 298 0152 0F93      		push r16
+ 299 0154 1F93      		push r17
+ 300               	/* prologue end (size=3) */
+ 301               	.LVL9:
+ 302 0156 182F      		mov r17,r24
+ 303 0158 062F      		mov r16,r22
+ 304 015a F42E      		mov r15,r20
+ 305 015c 00C0      		rjmp .L36
+ 306               	.LVL10:
+ 307               	.L37:
+ 308               	.LM52:
+ 309 015e 0E94 0000 		call task_I2CTWI
+ 310               	.LVL11:
+ 311               	.L36:
+ 312 0162 8091 BC00 		lds r24,188
+ 313 0166 80FD      		sbrc r24,0
+ 314 0168 00C0      		rjmp .L37
+ 315 016a 8091 0000 		lds r24,TWI_operation
+ 316 016e 8823      		tst r24
+ 317 0170 01F4      		brne .L37
+ 318               	.LM53:
+ 319 0172 82E0      		ldi r24,lo8(2)
+ 320 0174 8093 0000 		sts TWI_operation,r24
+ 321               	.LM54:
+ 322 0178 1093 0000 		sts I2CTWI_request_adr,r17
+ 323               	.LM55:
+ 324 017c 802F      		mov r24,r16
+ 325 017e 9927      		clr r25
+ 326 0180 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 327 0184 8093 0000 		sts I2CTWI_requestID,r24
+ 328               	.LM56:
+ 329 0188 F092 0000 		sts I2CTWI_request_size,r15
+ 330               	/* epilogue: frame size=0 */
+ 331 018c 1F91      		pop r17
+ 332 018e 0F91      		pop r16
+ 333 0190 FF90      		pop r15
+ 334 0192 0895      		ret
+ 335               	/* epilogue end (size=4) */
+ 336               	/* function I2CTWI_requestDataFromDevice size 34 (27) */
+ 337               	.LFE9:
+ 339               	.global	I2CTWI_requestRegisterFromDevice
+ 341               	I2CTWI_requestRegisterFromDevice:
+ 342               	.LFB10:
+ 343               	.LM57:
+ 344               	/* prologue: frame size=0 */
+ 345 0194 EF92      		push r14
+ 346 0196 FF92      		push r15
+ 347 0198 0F93      		push r16
+ 348 019a 1F93      		push r17
+ 349               	/* prologue end (size=4) */
+ 350               	.LVL12:
+ 351 019c E82E      		mov r14,r24
+ 352 019e 162F      		mov r17,r22
+ 353 01a0 042F      		mov r16,r20
+ 354 01a2 F22E      		mov r15,r18
+ 355 01a4 00C0      		rjmp .L42
+ 356               	.LVL13:
+ 357               	.L43:
+ 358               	.LM58:
+ 359 01a6 0E94 0000 		call task_I2CTWI
+ 360               	.LVL14:
+ 361               	.L42:
+ 362 01aa 8091 BC00 		lds r24,188
+ 363 01ae 80FD      		sbrc r24,0
+ 364 01b0 00C0      		rjmp .L43
+ 365 01b2 8091 0000 		lds r24,TWI_operation
+ 366 01b6 8823      		tst r24
+ 367 01b8 01F4      		brne .L43
+ 368               	.LM59:
+ 369 01ba 81E0      		ldi r24,lo8(1)
+ 370 01bc 8093 0000 		sts TWI_operation,r24
+ 371               	.LM60:
+ 372 01c0 812F      		mov r24,r17
+ 373 01c2 9927      		clr r25
+ 374 01c4 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 375 01c8 8093 0000 		sts I2CTWI_requestID,r24
+ 376               	.LM61:
+ 377 01cc E092 0000 		sts I2CTWI_request_adr,r14
+ 378               	.LM62:
+ 379 01d0 0093 0000 		sts I2CTWI_request_reg,r16
+ 380               	.LM63:
+ 381 01d4 F092 0000 		sts I2CTWI_request_size,r15
+ 382               	/* epilogue: frame size=0 */
+ 383 01d8 1F91      		pop r17
+ 384 01da 0F91      		pop r16
+ 385 01dc FF90      		pop r15
+ 386 01de EF90      		pop r14
+ 387 01e0 0895      		ret
+ 388               	/* epilogue end (size=5) */
+ 389               	/* function I2CTWI_requestRegisterFromDevice size 39 (30) */
+ 390               	.LFE10:
+ 392               	.global	I2CTWI_getReceivedData
+ 394               	I2CTWI_getReceivedData:
+ 395               	.LFB11:
+ 396               	.LM64:
+ 397               	/* prologue: frame size=0 */
+ 398               	/* prologue end (size=0) */
+ 399               	.LVL15:
+ 400 01e2 AC01      		movw r20,r24
+ 401               	.LVL16:
+ 402               	.L49:
+ 403               	.LM65:
+ 404 01e4 8091 BC00 		lds r24,188
+ 405 01e8 80FD      		sbrc r24,0
+ 406 01ea 00C0      		rjmp .L49
+ 407               	.LM66:
+ 408 01ec 8091 0000 		lds r24,TWI_statusReg
+ 409 01f0 80FF      		sbrs r24,0
+ 410 01f2 00C0      		rjmp .L55
+ 411 01f4 20E0      		ldi r18,lo8(0)
+ 412               	.LVL17:
+ 413 01f6 00C0      		rjmp .L53
+ 414               	.LVL18:
+ 415               	.L54:
+ 416               	.LM67:
+ 417 01f8 E22F      		mov r30,r18
+ 418 01fa FF27      		clr r31
+ 419 01fc DA01      		movw r26,r20
+ 420 01fe AE0F      		add r26,r30
+ 421 0200 BF1F      		adc r27,r31
+ 422 0202 E050      		subi r30,lo8(-(I2CTWI_recbuf))
+ 423 0204 F040      		sbci r31,hi8(-(I2CTWI_recbuf))
+ 424 0206 8181      		ldd r24,Z+1
+ 425 0208 8C93      		st X,r24
+ 426               	.LM68:
+ 427 020a 2F5F      		subi r18,lo8(-(1))
+ 428               	.L53:
+ 429 020c 2617      		cp r18,r22
+ 430 020e 01F4      		brne .L54
+ 431               	.L55:
+ 432 0210 0895      		ret
+ 433               	/* epilogue: frame size=0 */
+ 434               	/* epilogue: noreturn */
+ 435               	/* epilogue end (size=0) */
+ 436               	/* function I2CTWI_getReceivedData size 24 (24) */
+ 437               	.LFE11:
+ 439               	.global	I2CTWI_getState
+ 441               	I2CTWI_getState:
+ 442               	.LFB12:
+ 443               	.LM69:
+ 444               	/* prologue: frame size=0 */
+ 445               	/* prologue end (size=0) */
+ 446               	.L60:
+ 447               	.LM70:
+ 448 0212 8091 BC00 		lds r24,188
+ 449 0216 80FD      		sbrc r24,0
+ 450 0218 00C0      		rjmp .L60
+ 451               	.LM71:
+ 452 021a 8091 0000 		lds r24,TWI_TWSR_state
+ 453               	.LM72:
+ 454 021e 9927      		clr r25
+ 455               	/* epilogue: frame size=0 */
+ 456 0220 0895      		ret
+ 457               	/* epilogue end (size=1) */
+ 458               	/* function I2CTWI_getState size 8 (7) */
+ 459               	.LFE12:
+ 461               	.global	I2CTWI_readRegisters
+ 463               	I2CTWI_readRegisters:
+ 464               	.LFB13:
+ 465               	.LM73:
+ 466               	/* prologue: frame size=0 */
+ 467 0222 FF92      		push r15
+ 468 0224 0F93      		push r16
+ 469 0226 1F93      		push r17
+ 470 0228 CF93      		push r28
+ 471 022a DF93      		push r29
+ 472               	/* prologue end (size=5) */
+ 473               	.LVL19:
+ 474 022c 082F      		mov r16,r24
+ 475 022e F62E      		mov r15,r22
+ 476 0230 EA01      		movw r28,r20
+ 477 0232 122F      		mov r17,r18
+ 478 0234 00C0      		rjmp .L66
+ 479               	.LVL20:
+ 480               	.L67:
+ 481               	.LM74:
+ 482 0236 0E94 0000 		call task_I2CTWI
+ 483               	.LVL21:
+ 484               	.L66:
+ 485 023a 8091 BC00 		lds r24,188
+ 486 023e 80FD      		sbrc r24,0
+ 487 0240 00C0      		rjmp .L67
+ 488 0242 8091 0000 		lds r24,TWI_operation
+ 489 0246 8823      		tst r24
+ 490 0248 01F4      		brne .L67
+ 491               	.LM75:
+ 492 024a 81E0      		ldi r24,lo8(1)
+ 493 024c 8093 0000 		sts TWI_operation,r24
+ 494               	.LM76:
+ 495 0250 0093 0000 		sts I2CTWI_request_adr,r16
+ 496               	.LM77:
+ 497 0254 8FEF      		ldi r24,lo8(-1)
+ 498 0256 9FEF      		ldi r25,hi8(-1)
+ 499 0258 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 500 025c 8093 0000 		sts I2CTWI_requestID,r24
+ 501               	.LM78:
+ 502 0260 F092 0000 		sts I2CTWI_request_reg,r15
+ 503               	.LM79:
+ 504 0264 1093 0000 		sts I2CTWI_request_size,r17
+ 505 0268 00C0      		rjmp .L70
+ 506               	.L71:
+ 507               	.LM80:
+ 508 026a 0E94 0000 		call task_I2CTWI
+ 509               	.LVL22:
+ 510               	.L70:
+ 511 026e 8091 BC00 		lds r24,188
+ 512 0272 80FD      		sbrc r24,0
+ 513 0274 00C0      		rjmp .L71
+ 514 0276 8091 0000 		lds r24,TWI_operation
+ 515 027a 8823      		tst r24
+ 516 027c 01F4      		brne .L71
+ 517               	.LM81:
+ 518 027e 8091 0000 		lds r24,TWI_statusReg
+ 519 0282 80FF      		sbrs r24,0
+ 520 0284 00C0      		rjmp .L76
+ 521               	.LM82:
+ 522 0286 1F5F      		subi r17,lo8(-(1))
+ 523 0288 612F      		mov r22,r17
+ 524 028a CE01      		movw r24,r28
+ 525 028c 0E94 0000 		call I2CTWI_getReceivedData
+ 526               	.LVL23:
+ 527               	.L76:
+ 528               	/* epilogue: frame size=0 */
+ 529 0290 DF91      		pop r29
+ 530 0292 CF91      		pop r28
+ 531 0294 1F91      		pop r17
+ 532 0296 0F91      		pop r16
+ 533 0298 FF90      		pop r15
+ 534 029a 0895      		ret
+ 535               	/* epilogue end (size=6) */
+ 536               	/* function I2CTWI_readRegisters size 61 (50) */
+ 537               	.LFE13:
+ 539               	.global	I2CTWI_readBytes
+ 541               	I2CTWI_readBytes:
+ 542               	.LFB14:
+ 543               	.LM83:
+ 544               	/* prologue: frame size=0 */
+ 545 029c 0F93      		push r16
+ 546 029e 1F93      		push r17
+ 547 02a0 CF93      		push r28
+ 548 02a2 DF93      		push r29
+ 549               	/* prologue end (size=4) */
+ 550               	.LVL24:
+ 551 02a4 082F      		mov r16,r24
+ 552 02a6 EB01      		movw r28,r22
+ 553 02a8 142F      		mov r17,r20
+ 554 02aa 00C0      		rjmp .L78
+ 555               	.LVL25:
+ 556               	.L79:
+ 557               	.LM84:
+ 558 02ac 0E94 0000 		call task_I2CTWI
+ 559               	.LVL26:
+ 560               	.L78:
+ 561 02b0 8091 BC00 		lds r24,188
+ 562 02b4 80FD      		sbrc r24,0
+ 563 02b6 00C0      		rjmp .L79
+ 564 02b8 8091 0000 		lds r24,TWI_operation
+ 565 02bc 8823      		tst r24
+ 566 02be 01F4      		brne .L79
+ 567               	.LM85:
+ 568 02c0 0E94 0000 		call I2CTWI_delay
+ 569               	.LM86:
+ 570 02c4 82E0      		ldi r24,lo8(2)
+ 571 02c6 8093 0000 		sts TWI_operation,r24
+ 572               	.LM87:
+ 573 02ca 0093 0000 		sts I2CTWI_request_adr,r16
+ 574               	.LM88:
+ 575 02ce 8FEF      		ldi r24,lo8(-1)
+ 576 02d0 9FEF      		ldi r25,hi8(-1)
+ 577 02d2 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 578 02d6 8093 0000 		sts I2CTWI_requestID,r24
+ 579               	.LM89:
+ 580 02da 1093 0000 		sts I2CTWI_request_size,r17
+ 581 02de 00C0      		rjmp .L82
+ 582               	.L83:
+ 583               	.LM90:
+ 584 02e0 0E94 0000 		call task_I2CTWI
+ 585               	.L82:
+ 586 02e4 8091 BC00 		lds r24,188
+ 587 02e8 80FD      		sbrc r24,0
+ 588 02ea 00C0      		rjmp .L83
+ 589 02ec 8091 0000 		lds r24,TWI_operation
+ 590 02f0 8823      		tst r24
+ 591 02f2 01F4      		brne .L83
+ 592               	.LM91:
+ 593 02f4 8091 0000 		lds r24,TWI_statusReg
+ 594 02f8 80FF      		sbrs r24,0
+ 595 02fa 00C0      		rjmp .L88
+ 596               	.LM92:
+ 597 02fc 1F5F      		subi r17,lo8(-(1))
+ 598 02fe 612F      		mov r22,r17
+ 599 0300 CE01      		movw r24,r28
+ 600 0302 0E94 0000 		call I2CTWI_getReceivedData
+ 601               	.L88:
+ 602               	/* epilogue: frame size=0 */
+ 603 0306 DF91      		pop r29
+ 604 0308 CF91      		pop r28
+ 605 030a 1F91      		pop r17
+ 606 030c 0F91      		pop r16
+ 607 030e 0895      		ret
+ 608               	/* epilogue end (size=5) */
+ 609               	/* function I2CTWI_readBytes size 58 (49) */
+ 610               	.LFE14:
+ 612               	.global	I2CTWI_readByte
+ 614               	I2CTWI_readByte:
+ 615               	.LFB15:
+ 616               	.LM93:
+ 617               	/* prologue: frame size=0 */
+ 618 0310 1F93      		push r17
+ 619               	/* prologue end (size=1) */
+ 620               	.LVL27:
+ 621 0312 182F      		mov r17,r24
+ 622 0314 00C0      		rjmp .L90
+ 623               	.LVL28:
+ 624               	.L91:
+ 625               	.LM94:
+ 626 0316 0E94 0000 		call task_I2CTWI
+ 627               	.LVL29:
+ 628               	.L90:
+ 629 031a 8091 BC00 		lds r24,188
+ 630 031e 80FD      		sbrc r24,0
+ 631 0320 00C0      		rjmp .L91
+ 632 0322 8091 0000 		lds r24,TWI_operation
+ 633 0326 8823      		tst r24
+ 634 0328 01F4      		brne .L91
+ 635               	.LM95:
+ 636 032a 0E94 0000 		call I2CTWI_delay
+ 637               	.LM96:
+ 638 032e 82E0      		ldi r24,lo8(2)
+ 639 0330 8093 0000 		sts TWI_operation,r24
+ 640               	.LM97:
+ 641 0334 1093 0000 		sts I2CTWI_request_adr,r17
+ 642               	.LM98:
+ 643 0338 8FEF      		ldi r24,lo8(-1)
+ 644 033a 9FEF      		ldi r25,hi8(-1)
+ 645 033c 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 646 0340 8093 0000 		sts I2CTWI_requestID,r24
+ 647               	.LM99:
+ 648 0344 81E0      		ldi r24,lo8(1)
+ 649 0346 8093 0000 		sts I2CTWI_request_size,r24
+ 650               	.L94:
+ 651               	.LM100:
+ 652 034a 0E94 0000 		call task_I2CTWI
+ 653 034e 8091 0000 		lds r24,TWI_operation
+ 654 0352 8823      		tst r24
+ 655 0354 01F4      		brne .L94
+ 656               	.LM101:
+ 657 0356 8091 0000 		lds r24,TWI_statusReg
+ 658 035a 80FD      		sbrc r24,0
+ 659 035c 00C0      		rjmp .L96
+ 660 035e 80E0      		ldi r24,lo8(0)
+ 661 0360 90E0      		ldi r25,hi8(0)
+ 662 0362 00C0      		rjmp .L98
+ 663               	.L96:
+ 664               	.LM102:
+ 665 0364 8091 0000 		lds r24,I2CTWI_recbuf+1
+ 666 0368 9927      		clr r25
+ 667               	.L98:
+ 668               	/* epilogue: frame size=0 */
+ 669 036a 1F91      		pop r17
+ 670 036c 0895      		ret
+ 671               	/* epilogue end (size=2) */
+ 672               	/* function I2CTWI_readByte size 47 (44) */
+ 673               	.LFE15:
+ 675               	.global	I2CTWI_transmitByte
+ 677               	I2CTWI_transmitByte:
+ 678               	.LFB16:
+ 679               	.LM103:
+ 680               	/* prologue: frame size=0 */
+ 681 036e 0F93      		push r16
+ 682 0370 1F93      		push r17
+ 683               	/* prologue end (size=2) */
+ 684               	.LVL30:
+ 685 0372 182F      		mov r17,r24
+ 686 0374 062F      		mov r16,r22
+ 687 0376 00C0      		rjmp .L103
+ 688               	.LVL31:
+ 689               	.L104:
+ 690               	.LM104:
+ 691 0378 0E94 0000 		call task_I2CTWI
+ 692               	.LVL32:
+ 693               	.L103:
+ 694 037c 8091 BC00 		lds r24,188
+ 695 0380 80FD      		sbrc r24,0
+ 696 0382 00C0      		rjmp .L104
+ 697 0384 8091 0000 		lds r24,TWI_operation
+ 698 0388 8823      		tst r24
+ 699 038a 01F4      		brne .L104
+ 700               	.LM105:
+ 701 038c 0E94 0000 		call I2CTWI_delay
+ 702               	.LM106:
+ 703 0390 82E0      		ldi r24,lo8(2)
+ 704 0392 8093 0000 		sts TWI_msgSize,r24
+ 705               	.LM107:
+ 706 0396 1093 0000 		sts I2CTWI_buf,r17
+ 707               	.LM108:
+ 708 039a 0093 0000 		sts I2CTWI_buf+1,r16
+ 709               	.LM109:
+ 710 039e 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 711               	.LM110:
+ 712 03a2 85EA      		ldi r24,lo8(-91)
+ 713 03a4 8093 BC00 		sts 188,r24
+ 714               	/* epilogue: frame size=0 */
+ 715 03a8 1F91      		pop r17
+ 716 03aa 0F91      		pop r16
+ 717 03ac 0895      		ret
+ 718               	/* epilogue end (size=3) */
+ 719               	/* function I2CTWI_transmitByte size 32 (27) */
+ 720               	.LFE16:
+ 722               	.global	I2CTWI_transmit2Bytes
+ 724               	I2CTWI_transmit2Bytes:
+ 725               	.LFB17:
+ 726               	.LM111:
+ 727               	/* prologue: frame size=0 */
+ 728 03ae FF92      		push r15
+ 729 03b0 0F93      		push r16
+ 730 03b2 1F93      		push r17
+ 731               	/* prologue end (size=3) */
+ 732               	.LVL33:
+ 733 03b4 182F      		mov r17,r24
+ 734 03b6 062F      		mov r16,r22
+ 735 03b8 F42E      		mov r15,r20
+ 736 03ba 00C0      		rjmp .L109
+ 737               	.LVL34:
+ 738               	.L110:
+ 739               	.LM112:
+ 740 03bc 0E94 0000 		call task_I2CTWI
+ 741               	.LVL35:
+ 742               	.L109:
+ 743 03c0 8091 BC00 		lds r24,188
+ 744 03c4 80FD      		sbrc r24,0
+ 745 03c6 00C0      		rjmp .L110
+ 746 03c8 8091 0000 		lds r24,TWI_operation
+ 747 03cc 8823      		tst r24
+ 748 03ce 01F4      		brne .L110
+ 749               	.LM113:
+ 750 03d0 0E94 0000 		call I2CTWI_delay
+ 751               	.LM114:
+ 752 03d4 83E0      		ldi r24,lo8(3)
+ 753 03d6 8093 0000 		sts TWI_msgSize,r24
+ 754               	.LM115:
+ 755 03da 1093 0000 		sts I2CTWI_buf,r17
+ 756               	.LM116:
+ 757 03de 0093 0000 		sts I2CTWI_buf+1,r16
+ 758               	.LM117:
+ 759 03e2 F092 0000 		sts I2CTWI_buf+2,r15
+ 760               	.LM118:
+ 761 03e6 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 762               	.LM119:
+ 763 03ea 85EA      		ldi r24,lo8(-91)
+ 764 03ec 8093 BC00 		sts 188,r24
+ 765               	/* epilogue: frame size=0 */
+ 766 03f0 1F91      		pop r17
+ 767 03f2 0F91      		pop r16
+ 768 03f4 FF90      		pop r15
+ 769 03f6 0895      		ret
+ 770               	/* epilogue end (size=4) */
+ 771               	/* function I2CTWI_transmit2Bytes size 37 (30) */
+ 772               	.LFE17:
+ 774               	.global	I2CTWI_transmit3Bytes
+ 776               	I2CTWI_transmit3Bytes:
+ 777               	.LFB18:
+ 778               	.LM120:
+ 779               	/* prologue: frame size=0 */
+ 780 03f8 EF92      		push r14
+ 781 03fa FF92      		push r15
+ 782 03fc 0F93      		push r16
+ 783 03fe 1F93      		push r17
+ 784               	/* prologue end (size=4) */
+ 785               	.LVL36:
+ 786 0400 182F      		mov r17,r24
+ 787 0402 062F      		mov r16,r22
+ 788 0404 F42E      		mov r15,r20
+ 789 0406 E22E      		mov r14,r18
+ 790 0408 00C0      		rjmp .L115
+ 791               	.LVL37:
+ 792               	.L116:
+ 793               	.LM121:
+ 794 040a 0E94 0000 		call task_I2CTWI
+ 795               	.LVL38:
+ 796               	.L115:
+ 797 040e 8091 BC00 		lds r24,188
+ 798 0412 80FD      		sbrc r24,0
+ 799 0414 00C0      		rjmp .L116
+ 800 0416 8091 0000 		lds r24,TWI_operation
+ 801 041a 8823      		tst r24
+ 802 041c 01F4      		brne .L116
+ 803               	.LM122:
+ 804 041e 0E94 0000 		call I2CTWI_delay
+ 805               	.LM123:
+ 806 0422 84E0      		ldi r24,lo8(4)
+ 807 0424 8093 0000 		sts TWI_msgSize,r24
+ 808               	.LM124:
+ 809 0428 1093 0000 		sts I2CTWI_buf,r17
+ 810               	.LM125:
+ 811 042c 0093 0000 		sts I2CTWI_buf+1,r16
+ 812               	.LM126:
+ 813 0430 F092 0000 		sts I2CTWI_buf+2,r15
+ 814               	.LM127:
+ 815 0434 E092 0000 		sts I2CTWI_buf+3,r14
+ 816               	.LM128:
+ 817 0438 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 818               	.LM129:
+ 819 043c 85EA      		ldi r24,lo8(-91)
+ 820 043e 8093 BC00 		sts 188,r24
+ 821               	/* epilogue: frame size=0 */
+ 822 0442 1F91      		pop r17
+ 823 0444 0F91      		pop r16
+ 824 0446 FF90      		pop r15
+ 825 0448 EF90      		pop r14
+ 826 044a 0895      		ret
+ 827               	/* epilogue end (size=5) */
+ 828               	/* function I2CTWI_transmit3Bytes size 42 (33) */
+ 829               	.LFE18:
+ 831               	.global	I2CTWI_transmit4Bytes
+ 833               	I2CTWI_transmit4Bytes:
+ 834               	.LFB19:
+ 835               	.LM130:
+ 836               	/* prologue: frame size=0 */
+ 837 044c DF92      		push r13
+ 838 044e EF92      		push r14
+ 839 0450 FF92      		push r15
+ 840 0452 0F93      		push r16
+ 841 0454 1F93      		push r17
+ 842               	/* prologue end (size=5) */
+ 843               	.LVL39:
+ 844 0456 182F      		mov r17,r24
+ 845 0458 F62E      		mov r15,r22
+ 846 045a E42E      		mov r14,r20
+ 847 045c D22E      		mov r13,r18
+ 848 045e 00C0      		rjmp .L121
+ 849               	.LVL40:
+ 850               	.L122:
+ 851               	.LM131:
+ 852 0460 0E94 0000 		call task_I2CTWI
+ 853               	.LVL41:
+ 854               	.L121:
+ 855 0464 8091 BC00 		lds r24,188
+ 856 0468 80FD      		sbrc r24,0
+ 857 046a 00C0      		rjmp .L122
+ 858 046c 8091 0000 		lds r24,TWI_operation
+ 859 0470 8823      		tst r24
+ 860 0472 01F4      		brne .L122
+ 861               	.LM132:
+ 862 0474 0E94 0000 		call I2CTWI_delay
+ 863               	.LM133:
+ 864 0478 85E0      		ldi r24,lo8(5)
+ 865 047a 8093 0000 		sts TWI_msgSize,r24
+ 866               	.LM134:
+ 867 047e 1093 0000 		sts I2CTWI_buf,r17
+ 868               	.LM135:
+ 869 0482 F092 0000 		sts I2CTWI_buf+1,r15
+ 870               	.LM136:
+ 871 0486 E092 0000 		sts I2CTWI_buf+2,r14
+ 872               	.LM137:
+ 873 048a D092 0000 		sts I2CTWI_buf+3,r13
+ 874               	.LM138:
+ 875 048e 0093 0000 		sts I2CTWI_buf+4,r16
+ 876               	.LM139:
+ 877 0492 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 878               	.LM140:
+ 879 0496 85EA      		ldi r24,lo8(-91)
+ 880 0498 8093 BC00 		sts 188,r24
+ 881               	/* epilogue: frame size=0 */
+ 882 049c 1F91      		pop r17
+ 883 049e 0F91      		pop r16
+ 884 04a0 FF90      		pop r15
+ 885 04a2 EF90      		pop r14
+ 886 04a4 DF90      		pop r13
+ 887 04a6 0895      		ret
+ 888               	/* epilogue end (size=6) */
+ 889               	/* function I2CTWI_transmit4Bytes size 46 (35) */
+ 890               	.LFE19:
+ 892               	.global	I2CTWI_transmitBytes
+ 894               	I2CTWI_transmitBytes:
+ 895               	.LFB20:
+ 896               	.LM141:
+ 897               	/* prologue: frame size=0 */
+ 898 04a8 0F93      		push r16
+ 899 04aa 1F93      		push r17
+ 900 04ac CF93      		push r28
+ 901 04ae DF93      		push r29
+ 902               	/* prologue end (size=4) */
+ 903               	.LVL42:
+ 904 04b0 082F      		mov r16,r24
+ 905 04b2 EB01      		movw r28,r22
+ 906 04b4 142F      		mov r17,r20
+ 907 04b6 00C0      		rjmp .L127
+ 908               	.LVL43:
+ 909               	.L128:
+ 910               	.LM142:
+ 911 04b8 0E94 0000 		call task_I2CTWI
+ 912               	.LVL44:
+ 913               	.L127:
+ 914 04bc 8091 BC00 		lds r24,188
+ 915 04c0 80FD      		sbrc r24,0
+ 916 04c2 00C0      		rjmp .L128
+ 917 04c4 8091 0000 		lds r24,TWI_operation
+ 918 04c8 8823      		tst r24
+ 919 04ca 01F4      		brne .L128
+ 920               	.LM143:
+ 921 04cc 0E94 0000 		call I2CTWI_delay
+ 922               	.LM144:
+ 923 04d0 412F      		mov r20,r17
+ 924               	.LVL45:
+ 925 04d2 4F5F      		subi r20,lo8(-(1))
+ 926               	.LM145:
+ 927 04d4 4093 0000 		sts TWI_msgSize,r20
+ 928               	.LM146:
+ 929 04d8 0093 0000 		sts I2CTWI_buf,r16
+ 930 04dc 90E0      		ldi r25,lo8(0)
+ 931               	.LVL46:
+ 932 04de 00C0      		rjmp .L131
+ 933               	.LVL47:
+ 934               	.L132:
+ 935               	.LM147:
+ 936 04e0 E92F      		mov r30,r25
+ 937 04e2 FF27      		clr r31
+ 938 04e4 DE01      		movw r26,r28
+ 939 04e6 AE0F      		add r26,r30
+ 940 04e8 BF1F      		adc r27,r31
+ 941 04ea 8C91      		ld r24,X
+ 942 04ec E050      		subi r30,lo8(-(I2CTWI_buf))
+ 943 04ee F040      		sbci r31,hi8(-(I2CTWI_buf))
+ 944 04f0 8183      		std Z+1,r24
+ 945               	.LM148:
+ 946 04f2 9F5F      		subi r25,lo8(-(1))
+ 947               	.L131:
+ 948 04f4 9417      		cp r25,r20
+ 949 04f6 01F4      		brne .L132
+ 950               	.LM149:
+ 951 04f8 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 952               	.LM150:
+ 953 04fc 85EA      		ldi r24,lo8(-91)
+ 954 04fe 8093 BC00 		sts 188,r24
+ 955               	/* epilogue: frame size=0 */
+ 956 0502 DF91      		pop r29
+ 957 0504 CF91      		pop r28
+ 958 0506 1F91      		pop r17
+ 959 0508 0F91      		pop r16
+ 960 050a 0895      		ret
+ 961               	/* epilogue end (size=5) */
+ 962               	/* function I2CTWI_transmitBytes size 50 (41) */
+ 963               	.LFE20:
+ 965               	.global	__vector_39
+ 967               	__vector_39:
+ 968               	.LFB21:
+ 969               	.LM151:
+ 970               	/* prologue: frame size=0 */
+ 971 050c 1F92      		push __zero_reg__
+ 972 050e 0F92      		push __tmp_reg__
+ 973 0510 0FB6      		in __tmp_reg__,__SREG__
+ 974 0512 0F92      		push __tmp_reg__
+ 975 0514 1124      		clr __zero_reg__
+ 976 0516 2F93      		push r18
+ 977 0518 3F93      		push r19
+ 978 051a 8F93      		push r24
+ 979 051c 9F93      		push r25
+ 980 051e EF93      		push r30
+ 981 0520 FF93      		push r31
+ 982               	/* prologue end (size=11) */
+ 983               	.LM152:
+ 984 0522 8091 B900 		lds r24,185
+ 985 0526 8832      		cpi r24,lo8(40)
+ 986 0528 01F0      		breq .L138
+ 987               	.LM153:
+ 988 052a 8932      		cpi r24,lo8(41)
+ 989 052c 00F4      		brsh .L143
+ 990 052e 8031      		cpi r24,lo8(16)
+ 991 0530 01F0      		breq .L137
+ 992 0532 8831      		cpi r24,lo8(24)
+ 993 0534 01F0      		breq .L138
+ 994 0536 8830      		cpi r24,lo8(8)
+ 995 0538 01F0      		breq .+2
+ 996 053a 00C0      		rjmp .L136
+ 997 053c 00C0      		rjmp .L137
+ 998               	.L143:
+ 999 053e 8034      		cpi r24,lo8(64)
+ 1000 0540 01F0      		breq .L140
+ 1001 0542 8134      		cpi r24,lo8(65)
+ 1002 0544 00F4      		brsh .L144
+ 1003 0546 8833      		cpi r24,lo8(56)
+ 1004 0548 01F0      		breq .+2
+ 1005 054a 00C0      		rjmp .L136
+ 1006 054c 00C0      		rjmp .L139
+ 1007               	.L144:
+ 1008 054e 8035      		cpi r24,lo8(80)
+ 1009 0550 01F0      		breq .L141
+ 1010 0552 8835      		cpi r24,lo8(88)
+ 1011 0554 01F0      		breq .+2
+ 1012 0556 00C0      		rjmp .L136
+ 1013 0558 00C0      		rjmp .L142
+ 1014               	.L137:
+ 1015               	.LM154:
+ 1016 055a 1092 0000 		sts TWI_bufPos.1641,__zero_reg__
+ 1017               	.L138:
+ 1018               	.LM155:
+ 1019 055e 9091 0000 		lds r25,TWI_bufPos.1641
+ 1020 0562 8091 0000 		lds r24,TWI_msgSize
+ 1021 0566 9817      		cp r25,r24
+ 1022 0568 00F4      		brsh .L153
+ 1023               	.LM156:
+ 1024 056a E92F      		mov r30,r25
+ 1025 056c FF27      		clr r31
+ 1026 056e E050      		subi r30,lo8(-(I2CTWI_buf))
+ 1027 0570 F040      		sbci r31,hi8(-(I2CTWI_buf))
+ 1028 0572 8081      		ld r24,Z
+ 1029 0574 8093 BB00 		sts 187,r24
+ 1030 0578 9F5F      		subi r25,lo8(-(1))
+ 1031 057a 9093 0000 		sts TWI_bufPos.1641,r25
+ 1032 057e 00C0      		rjmp .L148
+ 1033               	.L141:
+ 1034               	.LM157:
+ 1035 0580 8091 0000 		lds r24,TWI_bufPos.1641
+ 1036 0584 9091 BB00 		lds r25,187
+ 1037 0588 E82F      		mov r30,r24
+ 1038 058a FF27      		clr r31
+ 1039 058c E050      		subi r30,lo8(-(I2CTWI_recbuf))
+ 1040 058e F040      		sbci r31,hi8(-(I2CTWI_recbuf))
+ 1041 0590 9083      		st Z,r25
+ 1042 0592 8F5F      		subi r24,lo8(-(1))
+ 1043 0594 8093 0000 		sts TWI_bufPos.1641,r24
+ 1044               	.L140:
+ 1045               	.LM158:
+ 1046 0598 2091 0000 		lds r18,TWI_bufPos.1641
+ 1047 059c 3327      		clr r19
+ 1048 059e 8091 0000 		lds r24,TWI_msgSize
+ 1049 05a2 9927      		clr r25
+ 1050 05a4 0197      		sbiw r24,1
+ 1051 05a6 2817      		cp r18,r24
+ 1052 05a8 3907      		cpc r19,r25
+ 1053 05aa 04F4      		brge .L148
+ 1054               	.LM159:
+ 1055 05ac 85EC      		ldi r24,lo8(-59)
+ 1056 05ae 00C0      		rjmp .L151
+ 1057               	.L148:
+ 1058               	.LM160:
+ 1059 05b0 85E8      		ldi r24,lo8(-123)
+ 1060 05b2 00C0      		rjmp .L151
+ 1061               	.L142:
+ 1062               	.LM161:
+ 1063 05b4 8091 BB00 		lds r24,187
+ 1064 05b8 E091 0000 		lds r30,TWI_bufPos.1641
+ 1065 05bc FF27      		clr r31
+ 1066 05be E050      		subi r30,lo8(-(I2CTWI_recbuf))
+ 1067 05c0 F040      		sbci r31,hi8(-(I2CTWI_recbuf))
+ 1068 05c2 8083      		st Z,r24
+ 1069               	.L153:
+ 1070               	.LM162:
+ 1071 05c4 8091 0000 		lds r24,TWI_statusReg
+ 1072 05c8 8160      		ori r24,lo8(1)
+ 1073 05ca 8093 0000 		sts TWI_statusReg,r24
+ 1074 05ce 00C0      		rjmp .L152
+ 1075               	.L139:
+ 1076               	.LM163:
+ 1077 05d0 8091 B900 		lds r24,185
+ 1078 05d4 8093 0000 		sts TWI_TWSR_state,r24
+ 1079               	.LM164:
+ 1080 05d8 85EA      		ldi r24,lo8(-91)
+ 1081 05da 00C0      		rjmp .L151
+ 1082               	.L136:
+ 1083               	.LM165:
+ 1084 05dc 8091 B900 		lds r24,185
+ 1085 05e0 8093 0000 		sts TWI_TWSR_state,r24
+ 1086               	.L152:
+ 1087               	.LM166:
+ 1088 05e4 84E9      		ldi r24,lo8(-108)
+ 1089               	.L151:
+ 1090 05e6 8093 BC00 		sts 188,r24
+ 1091               	/* epilogue: frame size=0 */
+ 1092 05ea FF91      		pop r31
+ 1093 05ec EF91      		pop r30
+ 1094 05ee 9F91      		pop r25
+ 1095 05f0 8F91      		pop r24
+ 1096 05f2 3F91      		pop r19
+ 1097 05f4 2F91      		pop r18
+ 1098 05f6 0F90      		pop __tmp_reg__
+ 1099 05f8 0FBE      		out __SREG__,__tmp_reg__
+ 1100 05fa 0F90      		pop __tmp_reg__
+ 1101 05fc 1F90      		pop __zero_reg__
+ 1102 05fe 1895      		reti
+ 1103               	/* epilogue end (size=11) */
+ 1104               	/* function __vector_39 size 122 (100) */
+ 1105               	.LFE21:
+ 1107               	.global	TWI_statusReg
+ 1108               	.global	TWI_statusReg
+ 1109               		.section .bss
+ 1112               	TWI_statusReg:
+ 1113 0000 00        		.skip 1,0
+ 1114               	.global	TWI_TWSR_state
+ 1115               	.global	TWI_TWSR_state
+ 1118               	TWI_TWSR_state:
+ 1119 0001 00        		.skip 1,0
+ 1120               	.global	I2CTWI_request_adr
+ 1121               	.global	I2CTWI_request_adr
+ 1124               	I2CTWI_request_adr:
+ 1125 0002 00        		.skip 1,0
+ 1126               	.global	I2CTWI_request_reg
+ 1127               	.global	I2CTWI_request_reg
+ 1130               	I2CTWI_request_reg:
+ 1131 0003 00        		.skip 1,0
+ 1132               	.global	I2CTWI_request_size
+ 1133               	.global	I2CTWI_request_size
+ 1136               	I2CTWI_request_size:
+ 1137 0004 00        		.skip 1,0
+ 1138               	.global	I2CTWI_requestID
+ 1139               	.global	I2CTWI_requestID
+ 1142               	I2CTWI_requestID:
+ 1143 0005 0000      		.skip 2,0
+ 1144               	.global	TWI_operation
+ 1145               	.global	TWI_operation
+ 1148               	TWI_operation:
+ 1149 0007 00        		.skip 1,0
+ 1150               		.lcomm TWI_bufPos.1641,1
+ 1151               		.data
+ 1154               	I2CTWI_requestedDataReadyHandler:
+ 1155 0000 0000      		.word	gs(I2CTWI_requestedDataReady_DUMMY)
+ 1158               	I2CTWI_transmissionErrorHandler:
+ 1159 0002 0000      		.word	gs(I2CTWI_transmissionError_DUMMY)
+ 1160               		.lcomm I2CTWI_buf,16
+ 1161               		.lcomm I2CTWI_recbuf,48
+ 1162               		.lcomm TWI_msgSize,1
+ 1318               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 RP6I2CmasterTWI.c
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:3      *ABS*:0000003f __SREG__
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:4      *ABS*:0000003e __SP_H__
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:5      *ABS*:0000003d __SP_L__
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:6      *ABS*:00000000 __tmp_reg__
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:7      *ABS*:00000001 __zero_reg__
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:20     .text:00000000 __I2CTWI_initMaster
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1112   .bss:00000000 TWI_statusReg
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:57     .text:00000024 I2CTWI_requestedDataReady_DUMMY
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:71     .text:00000026 I2CTWI_setRequestedDataReadyHandler
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1154   .data:00000000 I2CTWI_requestedDataReadyHandler
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:88     .text:00000030 I2CTWI_transmissionError_DUMMY
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:102    .text:00000032 I2CTWI_setTransmissionErrorHandler
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1158   .data:00000002 I2CTWI_transmissionErrorHandler
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:119    .text:0000003c I2CTWI_delay
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:162    .text:00000072 task_I2CTWI
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1148   .bss:00000007 TWI_operation
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1161   .bss:00000049 TWI_msgSize
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1124   .bss:00000002 I2CTWI_request_adr
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1150   .bss:00000009 I2CTWI_buf
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1130   .bss:00000003 I2CTWI_request_reg
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1136   .bss:00000004 I2CTWI_request_size
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1142   .bss:00000005 I2CTWI_requestID
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1118   .bss:00000001 TWI_TWSR_state
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:293    .text:00000150 I2CTWI_requestDataFromDevice
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:341    .text:00000194 I2CTWI_requestRegisterFromDevice
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:394    .text:000001e2 I2CTWI_getReceivedData
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:1160   .bss:00000019 I2CTWI_recbuf
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:441    .text:00000212 I2CTWI_getState
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:463    .text:00000222 I2CTWI_readRegisters
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:541    .text:0000029c I2CTWI_readBytes
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:614    .text:00000310 I2CTWI_readByte
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:677    .text:0000036e I2CTWI_transmitByte
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:724    .text:000003ae I2CTWI_transmit2Bytes
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:776    .text:000003f8 I2CTWI_transmit3Bytes
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:833    .text:0000044c I2CTWI_transmit4Bytes
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:894    .text:000004a8 I2CTWI_transmitBytes
+/var/folders/_h/gkpdf8sj3m76l2x0wxr7sfvm0000gq/T//cczjJr2P.s:967    .text:0000050c __vector_39
+                             .bss:00000008 TWI_bufPos.1641
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
