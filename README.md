@@ -1,6 +1,5 @@
 #XRobot
-##Credit
-Need the avr-Xinux templates
+Needs the avr-Xinux templates
 
 ##Donate
-Bitcoin: 1HegFnKDUQnkjdLZmnkufhxh3kfWQMWBDj
+Bitcoin: 1kijeg6fvMHqtyBEGE6DtjUimrQ8WUXPE
